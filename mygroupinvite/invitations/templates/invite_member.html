@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Member</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .group-members {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .group-members li {
+            margin: 5px 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Invite In  Muqit Group</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="roll_number">Roll Number:</label>
+                {{ form.roll_number }}
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                {{ form.name }}
+            </div>
+            <div class="form-group">
+                <label for="whatsapp_phone">WhatsApp Phone:</label>
+                {{ form.whatsapp_phone }}
+            </div>
+            <button type="submit">Enter</button>
+        </form>
+        
+        <h2>Group Members</h2>
+        <ul class="group-members">
+            <li>Muqit - Group Leader</li>
+            <li>Ahtasham</li>
+            <li>Mustafa</li>
+            <li>Huzaifa</li>
+        </ul>
+
+        <div class="footer">
+            <p>&copy; 2024 Muqit Group Invitation</p>
+        </div>
+    </div>
+</body>
+</html>
